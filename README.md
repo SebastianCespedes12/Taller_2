@@ -67,6 +67,7 @@ if __name__ =="__main__":
  
 ```
 >#### 5.Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva. Pista: Puede ser de utilidad chequear el Algoritmo de Euclides para el cálculo del Máximo Común Divisor, y revisar cómo se relaciona este último con el Mínimo Común Múltiplo.
+#### Recursivo:
 ```python
 #Recursivo
 def mcd_recursivo(a:int,b:int)->int: 
@@ -91,6 +92,7 @@ if __name__ == "__main__":
   b= int(input("Ingrese otro numero: "))
   print(f"el MCM de {a} y {b} es: {mcm(a,b)}")
 ```
+#### Iterativo:
 ```python
 #Iterativo
 def mcd_iterativo(a:int,b:int)->int:
