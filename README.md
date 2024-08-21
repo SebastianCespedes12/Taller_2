@@ -1,4 +1,12 @@
-# Taller_2
+# Taller 2
+## **Infinity Bit Team (∞BT)**
+* Juan Diego Cárdenas Olarte
+* Sebastián Céspedes Rico
+* Alejandra Landines Sanabria
+
+[![logo.jpg](https://i.postimg.cc/pdcVKPsT/logo.jpg)](https://postimg.cc/JyJWLCVV)
+
+-------------
 >#### 1.Desarrollar un programa que ingrese un número entero n y separe todos los digitos que componen el número. Pista: Utilice los operadores módulo (%) y división entera (//).
 ```python
 def separar_digitos(n:int):
