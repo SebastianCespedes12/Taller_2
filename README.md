@@ -63,8 +63,53 @@ if __name__ =="__main__":
   verificar_espejos(a,b)
 ```
 >#### 4.Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. nota: use math para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.  
-```python 
- 
+```python
+import math
+
+#Función para calcular la aproximación del coseno de un número usando la serie de Taylor.
+def cos(x:float,n:int)->float:
+    aprox=0 #Variable que almacena la suma de la serie.
+    for i in range (n+1): #Itera desde 0 hasta n para sumar a aprox los términos solicitados de la serie.
+        nuevo_termino=(((-1)**i)*(x**(2*i)))/math.factorial(2*i) #Calcula el término actual de la serie.
+        aprox+=nuevo_termino #Suma el término a la aproximación.
+    return aprox #Devuelve la aproximación de coseno de x.
+
+#Función para calcular el número mínimo de términos que se necesitan para obtener ciertos porcentajes de error.
+def error(x:float)->float:
+    valor_real_cos=math.cos(x) #Math para hallar el valor real de cos(x).
+    errores=[10,1,0.1,0.001] #Lista de errores a calcular.
+    resultados=[] #Lista para almacenar el número de términos necesarios para cada porcentaje de error.
+    for i in errores: #Itera sobre cada uno de los errores a calcular.
+        n=1 #El número de términos inicia en 1.
+        while True:
+            valor_aproximado_cos=cos(x,n) #Calcula la aproximación con n términos.
+            error = abs((valor_real_cos-valor_aproximado_cos)/valor_real_cos)*100 #Calcula el error porcentual.
+            if error<=i: #Si el error es menor o igual al deseado, se almacena n en la lista de resultados y se sale del ciclo.
+                resultados.append(n)
+                break
+            n+=1 #Incrementa n para probar con un término más.
+    return resultados #Devuelve la lista con el número mínimo de términos que se necesitan para obtener los errores solicitados.
+
+if __name__=="__main__": 
+    #Se solicita al usuario un valor para x y n.
+    x=float(input("Ingrese un número: "))
+    n=int(input("¿Cuántos términos de la serie de Taylor desea utilizar para la aproximación?: "))
+    
+    #Calcula el valor real y aproximado de coseno con las respectivas funciones.
+    real=math.cos(x)
+    aproximado=cos(x,n)
+
+    #Muestra el valor aproximado, el real y el error porcentual.
+    print("Valor aproximado de cos(x): ", aproximado)
+    print("Valor real de cos(x): ", real)
+    print("Porcentaje de error del valor aproximado: ", abs((real-aproximado)/real)*100,"%")
+
+    #Calcula y muestra el número de términos necesarios para alcanzar los diferentes porcentajes de error.
+    print("Si desea un porcentaje de error menor, intente: ")
+    print("Para un porcentaje de error menor al 10%, utilice: ", error(x)[0], "términos de la serie")
+    print("Para un porcentaje de error menor al 1%, utilice: ", error(x)[1], "términos de la serie")
+    print("Para un porcentaje de error menor al 0.1%, utilice: ", error(x)[2], "términos de la serie")
+    print("Para un porcentaje de error menor al 0.001%, utilice: ", error(x)[3], "términos de la serie")
 ```
 >#### 5.Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva. Pista: Puede ser de utilidad chequear el Algoritmo de Euclides para el cálculo del Máximo Común Divisor, y revisar cómo se relaciona este último con el Mínimo Común Múltiplo.
 #### Recursivo:
@@ -211,5 +256,63 @@ if __name__=="__main__":
 ```
 >#### 11.Desarrollar un algoritmo que determine si una matriz es mágica. Se dice que una matriz cuadrada es mágica si la suma de cada una de sus filas, de cada una de sus columnas y de cada diagonal es igual.
 ```python 
- 
+#Función para saber si una matriz es mágica.
+def matriz_magica(matriz:list)->bool:
+
+    filas = len(matriz) #Obtiene el número de filas/columnas de la matriz (asumimos que es cuadrada).
+    
+    #Calcula la suma de los elementos de la primera fila para usarla como referencia.
+    suma_primer_fila=0
+    for i in range (filas):
+        suma_primer_fila+=matriz[0][i]
+
+    #Calcula la suma de los elementos para cada fila.
+    for i in range (filas):
+        suma_fila=0
+        for j in range (filas):
+            suma_fila+=matriz[i][j]
+        #print(suma_fila)
+
+        #Si la suma de la fila actual no es igual a la suma de referencia ya se sabe que la matriz no es mágica y se retorna un False.
+        if suma_fila!=suma_primer_fila:
+            return False
+    
+    #Calcula la suma de los elementos para cada columna.
+    for i in range (filas):
+        suma_columna=0
+        for j in range (filas):
+            suma_columna+=matriz[j][i]
+        #print(suma_columna)
+
+        #Si la suma de la columna actual no es igual a la suma de referencia ya se sabe que la matriz no es mágica y se retorna un False.
+        if suma_columna!=suma_primer_fila:
+            return False
+    
+    #Verifica que la suma de la diagonal proncipal sea igual a la suma de referencia.
+    suma_diagonal=0
+    for i in range(filas):
+        suma_diagonal+=matriz[i][i]
+    #print(suma_diagonal)
+    if suma_diagonal!=suma_primer_fila:
+        return False
+    
+    #Verifica que la suma de la diagonal secundaria sea igual a la suma de referencia.
+    suma_otra_diagonal=0
+    for i in range(filas):
+        suma_otra_diagonal+=matriz[i][(filas-1)-i]
+    #print(suma_otra_diagonal)
+    if suma_otra_diagonal!=suma_primer_fila:
+        return False
+    
+    return True #Si todas las condiciones se cumplen, la matriz es mágica.
+    
+if __name__=="__main__": 
+    matriz=[[17,24,1,8,15],[23,5,7,14,16],[4,6,13,20,22],[10,12,19,21,3],[11,18,25,2,9]]
+    magica=matriz_magica(matriz) #Se evalua la función matriz_magica enviando como argumento la matriz de arriba.
+
+    #Imprime si la matriz es mágica o no.
+    if magica==True:
+        print("La matriz es mágica")
+    else:
+        print("La matriz no es mágica")
 ```
