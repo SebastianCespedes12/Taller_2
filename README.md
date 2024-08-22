@@ -7,7 +7,7 @@
 [![logo.jpg](https://i.postimg.cc/pdcVKPsT/logo.jpg)](https://postimg.cc/JyJWLCVV)
 
 -------------
->#### 1.Desarrollar un programa que ingrese un número entero n y separe todos los digitos que componen el número. Pista: Utilice los operadores módulo (%) y división entera (//).
+>### 1.Desarrollar un programa que ingrese un número entero n y separe todos los digitos que componen el número. Pista: Utilice los operadores módulo (%) y división entera (//).
 
 El programa separa los dígitos de un número ingresado utilizando los operadores módulo (%) y división entera (//). El número se procesa dígito por dígito, imprimiendo cada uno desde el primero hasta el ultimo.
 ```python
@@ -26,7 +26,7 @@ if __name__=="__main__":
   n: int = int(input("Ingrese un numero")) 
   separar_digitos(n)
 ```
->#### 2.Desarrollar un programa que ingrese un número flotante n y separe su parte entera de la parte decimal, y luego entregue los dígitos tanto de la parte entera como de la decimal.
+>### 2.Desarrollar un programa que ingrese un número flotante n y separe su parte entera de la parte decimal, y luego entregue los dígitos tanto de la parte entera como de la decimal.
 
 La función separa un número flotante en su parte entera y decimal. La parte entera se obtiene con int(), y la parte decimal se calcula restando la parte entera al número original.
 ```python
@@ -45,7 +45,7 @@ if __name__=="__main__":
   print(f"La parte decimal es: {decimal}") 
 
 ```
->#### 3.Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos, definiendo números espejos como dos números a y b tales que a se lee de izquierda a derecha igual que se lee b de derecha a izquierda, y viceversa.
+>### 3.Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos, definiendo números espejos como dos números a y b tales que a se lee de izquierda a derecha igual que se lee b de derecha a izquierda, y viceversa.
 
 El programa invierte un numero mediante una función que extrae sus dígitos uno a uno y los recombina en orden inverso utilizando operadores módulo (%) y división entera (//). Luego, se compara si el número original y el invertido son iguales, determinando si son espejos.
 ```python 
@@ -68,7 +68,7 @@ if __name__ =="__main__":
   b = int(input("Ingrese otro numero: "))
   verificar_espejos(a,b)
 ```
->#### 4.Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. nota: use math para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.  
+>### 4.Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. nota: use math para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.  
 
 El programa calcula el coseno de un número usando la serie de Taylor, sumando los primeros n términos de la serie. Luego, se compara la aproximación con el valor real de la función coseno (usando math.cos()) para determinar el error y cuántos términos son necesarios para alcanzar diferentes niveles de precisión utilizando un bucle y una lista de resultados.
 ```python
@@ -119,7 +119,7 @@ if __name__=="__main__":
     print("Para un porcentaje de error menor al 0.1%, utilice: ", error(x)[2], "términos de la serie")
     print("Para un porcentaje de error menor al 0.001%, utilice: ", error(x)[3], "términos de la serie")
 ```
->#### 5.Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva.
+>### 5.Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva.
 
 El programa utiliza el Algoritmo de Euclides para calcular el Máximo Común Divisor (MCM) de dos números, y luego aplica la relación entre MCD y MCM, el producto del MCD de dos numeros por el MCM es igual al producto de ambos números. Se implementan tanto versiones recursivas como iterativas del cálculo.
 #### Recursivo:
@@ -174,7 +174,7 @@ if __name__ == "__main__":
   b= int(input("Ingrese otro numero: "))
   print(f"el MCM de {a} y {b} es: {mcm(a,b)}")
 ```
->#### 6.Desarrollar un programa que determine si en una lista existen o no elementos repetidos. Pista: Maneje valores booleanos y utilice el operador in. 
+>### 6.Desarrollar un programa que determine si en una lista existen o no elementos repetidos. Pista: Maneje valores booleanos y utilice el operador in. 
 
 Se recorre la lista contando cuántas veces aparece cada elemento, si algún elemento aparece más de una vez, el programa indica que hay elementos repetidos; de lo contrario, indica que no los hay.
 ```python 
@@ -193,7 +193,7 @@ if __name__=="__main__":
   lista = [1,2,4,"a",4] 
   elementos_repetidos(lista) 
 ```
->#### 7.Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
+>### 7.Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
 El programa recorre todos los elementos de una lista, por cada uno de estos recorre a su vez sus caracteres, si el programa detecta que alguno de estos caracteres es una vocal sumara uno a una variable que al llegar a dos hara que se imprima la cadena que se esta tomando. Si no se encuentra ninguna cadena con mas de dos vocales se imprimira el texto "No existe"
 ```python 
  #Función que permite saber si una cadenas de texto tiene dos o mas vocales.
@@ -217,7 +217,7 @@ if __name__ == "__main__":
         lista.append(str(input("escriba un dato")))
     cadena=no_vocales(lista)
 ```
->#### 8.Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista. 
+>### 8.Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista. 
 
 El programa compara dos listas y crea una nueva lista con los elementos que están en la primera lista pero no en la segunda, utilizando los operadores `in` y `not`.
 ```python 
@@ -233,7 +233,7 @@ if __name__=="__main__":
   lista2=[5,3,2,4]
   print(si_lista1_no_lista2(lista1,lista2))
 ```
->#### 9.Resolver el punto 7 del taller 1 usando operaciones con vectores.
+>### 9.Resolver el punto 7 del taller 1 usando operaciones con vectores.
 Para este punto se pide escribir un programa que pida 5 números reales y calcule las siguientes operaciones usando operaciones con vectores:
 
 + El promedio
@@ -296,7 +296,7 @@ if __name__=="__main__":
     res_rev=reves(lista)
     print(f"La lista ordenada de mayor a menor es {res_rev}")
 ```
->#### 10.Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad? 
+>### 10.Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad? 
 
 El programa comprueba que cada elemento de la lista se múltiplos de 3 utilizando el operador de modulo (%). Se presentan dos enfoques: un patrón de acumulación y una comprensión de listas. Además, se resuelve el problema sin usar el operador módulo, utilizando parte del codigo del primer punto.
 ```python 
@@ -348,7 +348,7 @@ if __name__=="__main__":
   print(compr_mult_tres(A))
   print(acum_mult_tres(A))
 ```
->#### 11.Desarrollar un algoritmo que determine si una matriz es mágica. Se dice que una matriz cuadrada es mágica si la suma de cada una de sus filas, de cada una de sus columnas y de cada diagonal es igual.
+>### 11.Desarrollar un algoritmo que determine si una matriz es mágica. Se dice que una matriz cuadrada es mágica si la suma de cada una de sus filas, de cada una de sus columnas y de cada diagonal es igual.
 
 El programa verifica si la suma de las filas, columnas y diagonales es igual. Lo hace sumando los elementos de las filas, columnas y diagonales y comparándolos con la suma de referencia (la primera fila).
 ```python 
