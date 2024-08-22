@@ -8,6 +8,8 @@
 
 -------------
 >#### 1.Desarrollar un programa que ingrese un número entero n y separe todos los digitos que componen el número. Pista: Utilice los operadores módulo (%) y división entera (//).
+
+El programa separa los dígitos de un número ingresado utilizando los operadores módulo (%) y división entera (//). El número se procesa dígito por dígito, imprimiendo cada uno desde el primero hasta el ultimo.
 ```python
 def separar_digitos(n:int):
   cantidad: int =len(str(n)) #Se almacena la cantidad de digitos del numero ingresado
@@ -25,6 +27,8 @@ if __name__=="__main__":
   separar_digitos(n)
 ```
 >#### 2.Desarrollar un programa que ingrese un número flotante n y separe su parte entera de la parte decimal, y luego entregue los dígitos tanto de la parte entera como de la decimal.
+
+La función separa un número flotante en su parte entera y decimal. La parte entera se obtiene con int(), y la parte decimal se calcula restando la parte entera al número original.
 ```python
 def separar_flotante(n:float):
   entero = int(n) #Se obtiene la parte entera del numero
@@ -42,6 +46,8 @@ if __name__=="__main__":
 
 ```
 >#### 3.Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos, definiendo números espejos como dos números a y b tales que a se lee de izquierda a derecha igual que se lee b de derecha a izquierda, y viceversa.
+
+El programa invierte un numero mediante una función que extrae sus dígitos uno a uno y los recombina en orden inverso utilizando operadores módulo (%) y división entera (//). Luego, se compara si el número original y el invertido son iguales, determinando si son espejos.
 ```python 
 def invertir(n: int) -> int:
     invertido: int= 0 #Se inicializa la variable invertido en 0
@@ -63,6 +69,8 @@ if __name__ =="__main__":
   verificar_espejos(a,b)
 ```
 >#### 4.Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. nota: use math para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.  
+
+El programa calcula el coseno de un número usando la serie de Taylor, sumando los primeros n términos de la serie. Luego, se compara la aproximación con el valor real de la función coseno (usando math.cos()) para determinar el error y cuántos términos son necesarios para alcanzar diferentes niveles de precisión utilizando un bucle y una lista de resultados.
 ```python
 import math
 
@@ -111,7 +119,9 @@ if __name__=="__main__":
     print("Para un porcentaje de error menor al 0.1%, utilice: ", error(x)[2], "términos de la serie")
     print("Para un porcentaje de error menor al 0.001%, utilice: ", error(x)[3], "términos de la serie")
 ```
->#### 5.Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva. Pista: Puede ser de utilidad chequear el Algoritmo de Euclides para el cálculo del Máximo Común Divisor, y revisar cómo se relaciona este último con el Mínimo Común Múltiplo.
+>#### 5.Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva.
+
+El programa utiliza el Algoritmo de Euclides para calcular el Máximo Común Divisor (MCM) de dos números, y luego aplica la relación entre MCD y MCM, el producto del MCD de dos numeros por el MCM es igual al producto de ambos números. Se implementan tanto versiones recursivas como iterativas del cálculo.
 #### Recursivo:
 ```python
 #Recursivo
@@ -165,6 +175,8 @@ if __name__ == "__main__":
   print(f"el MCM de {a} y {b} es: {mcm(a,b)}")
 ```
 >#### 6.Desarrollar un programa que determine si en una lista existen o no elementos repetidos. Pista: Maneje valores booleanos y utilice el operador in. 
+
+Se recorre la lista contando cuántas veces aparece cada elemento, si algún elemento aparece más de una vez, el programa indica que hay elementos repetidos; de lo contrario, indica que no los hay.
 ```python 
 def elementos_repetidos(lista): 
   for i in lista : #Se recorre la lista
@@ -186,6 +198,8 @@ if __name__=="__main__":
  
 ```
 >#### 8.Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista. 
+
+El programa compara dos listas y crea una nueva lista con los elementos que están en la primera lista pero no en la segunda, utilizando los operadores `in` y `not`.
 ```python 
 def si_lista1_no_lista2(lista1: list,lista2: list) -> list:   
   lista_result=[] # Se inicializa una lista vacía
@@ -204,6 +218,8 @@ if __name__=="__main__":
  
 ```
 >#### 10.Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad? 
+
+El programa filtra una lista para encontrar los números que son múltiplos de 3. Se presentan dos enfoques: un patrón de acumulación y una comprensión de listas. Además, se resuelve el problema sin usar el operador módulo, utilizando parte del codigo del primer punto.
 ```python 
 def acum_mult_tres (A: list) -> list:
   B=[] #Se inicializa una lista vacía
@@ -225,11 +241,10 @@ if __name__=="__main__":
 #Desafio:
 
 def sumar_digitos(n:int)->int:
-  cantidad= len(str(n)) 
+  cantidad= len(str(n))  #Se almacena la cantidad de digitos del numero ingresado
   if cantidad == 1: #Si el numero ingresado es de un solo digito
     return n
   elif n>0:
-    #Se almacena la cantidad de digitos del numero ingresado
     i: int =1   #Se inicializa la variable i en 1
     sum=0       #Se inicializa la variable sum en 0
     while i<=cantidad: #Mientras i sea menor o igual a la cantidad de digitos del numero ingresado
@@ -242,11 +257,11 @@ def acum_mult_tres(A: list) -> list:
   B=[]  #Se inicializa una lista vacía
   for i in A:  #Se recorre la lista A
     if sumar_digitos(i) in (3,6,9): #Si la suma de los digitos del elemento i de la lista A es 3, 6 o 9
-      B.append(i)
+      B.append(i) #Se añade a la lista B
   return B
 
 def compr_mult_tres(A: list) -> list:
-  B=[i for i in A if sumar_digitos(i) in (3,6,9)]
+  B=[i for i in A if sumar_digitos(i) in (3,6,9)] #Si la suma de los digitos del elemento i de la lista A es 3, 6 o 9 se añade a la lista.
   return B
 
 if __name__=="__main__":
@@ -255,6 +270,8 @@ if __name__=="__main__":
   print(acum_mult_tres(A))
 ```
 >#### 11.Desarrollar un algoritmo que determine si una matriz es mágica. Se dice que una matriz cuadrada es mágica si la suma de cada una de sus filas, de cada una de sus columnas y de cada diagonal es igual.
+
+El programa verifica si la suma de las filas, columnas y diagonales es igual. Lo hace sumando los elementos de las filas, columnas y diagonales y comparándolos con la suma de referencia (la primera fila).
 ```python 
 #Función para saber si una matriz es mágica.
 def matriz_magica(matriz:list)->bool:
