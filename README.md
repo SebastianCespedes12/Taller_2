@@ -270,19 +270,19 @@ if __name__=="__main__":
     for j in range (0,num):
         lista.append(float(input("escriba un dato")))
     res_prom=promedio(lista)
-    print(res_prom)
+    print(f"El promedio de los valores de la lista es {res_prom}")
     res_mult=multiplicativo(lista)
-    print(res_mult)
+    print(f"El promedio multiplicativo de los valores de la lista es {res_mult}")
     res_pot=pot_may(lista)
-    print(res_pot)
+    print(f"La potencia del numero mas grande de la lista elevado al mas pequeño de la lista es {res_pot}")
     res_rad=raiz(lista)
-    print(res_rad)
+    print(f"La raiz del valor mas pequeño de la lista es {res_rad}")
     res_med=med(lista)
-    print(res_med)
+    print(f"La media de los valores de la lista es {res_med}")
     res_ord=orden(lista)
-    print(res_ord)
+    print(f"La lista ordenada de menor a mayor es {res_ord}")
     res_rev=reves(lista)
-    print(res_rev)
+    print(f"La lista ordenada de mayor a menor es {res_rev}")
 ```
 >#### 10.Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad? 
 
