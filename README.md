@@ -195,7 +195,26 @@ if __name__=="__main__":
 ```
 >#### 7.Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
 ```python 
- 
+ #Función que permite saber si una cadenas de texto tiene dos o mas vocales.
+def no_vocales (lista:list)->list: #Se inicializa la funcion con sus parametros.
+    nueva_lista=[] #Lista de guia que permitira saber si ningun elemento tiene mas de dos vocales.
+    for i in lista: #Permite recorrer todos los elementos de la lista
+        vocales=0 #Variable bandera
+        for j in i: #Permite recorrer cada caracter de la cadena
+            if j == "a"or j== "A"or j=="e"or j=="E"or j=="i"or j=="I"or j=="o"or j=="O"or j=="u"or j=="U": #Permite identificar si alguna letra de la cadena es una vocal.
+                vocales+=1 #Le suma uno a la variable bandera cuando se cumple la condicion anterior
+                if vocales ==2: #Condiciona lo que pasa cuando en una cadena hay dos vocales
+                    nueva_lista.append(i) #Añade dicha cadena a la lista de guia
+                    print(i) #Si tiene dos o mas vocales imprimira la cadena
+    if nueva_lista == []: #Condiciona que pasa si tras la iteracion la lista guia sigue vacia
+        print("No existe")  #Si sigue vacia se imprime "no existe"  
+if __name__ == "__main__":
+    lista = [] 
+    num=int(input("Escribe el numero de cadenas que se desean poner:"))
+    lista=[]
+    for j in range (0,num):
+        lista.append(str(input("escriba un dato")))
+    cadena=no_vocales(lista)
 ```
 >#### 8.Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista. 
 
