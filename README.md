@@ -234,6 +234,16 @@ if __name__=="__main__":
   print(si_lista1_no_lista2(lista1,lista2))
 ```
 >#### 9.Resolver el punto 7 del taller 1 usando operaciones con vectores.
+Para este punto se pide escribir un programa que pida 5 números reales y calcule las siguientes operaciones usando operaciones con vectores:
+
+El promedio
+La mediana
+El promedio multiplicativo (multilplica todos y luego calcula la raíz de la cantidad de operandos)
+Ordenar los números de forma ascendente
+Ordenar los números de forma descendente
+La potencia del mayor número elevado al menor número
+La raíz cúbica del menor número
+
 Para hacer esto se hizo uso de 7  funcinoes, la primera de ella iteraba todos los elementos de la lista sumandolos para luego dividirlos entre el largo de la lista para asi ascar el promedio. La segunda funcion tambien iteraba todos los elementos de la lista pero esta vez multiplicandolos para finalmente sacarle la raiz quinta a este resultado. La tercera funcion devolvia el valor medio de la lista, para esto ordenaba los valores de menor a mayor y devolvia siempre el tercero ya que es una lista de 5 elementos. La cuarta funcion hacia uso de la operacion de listas ".sort" para ordenar la lista de menor a mayor y devolverla. La quinta lista hacia uso de la operacin de listas "lista.sort(reverse = True)" para ordenar la lista de mayor a menor. La sexta funcion hace uso de la funcion de listas ".sort" para ordenarla de menor a mayor para asi poder elevar el ultimo de la lista elevado al primero (Mayor elevado al menor). La ultima lista tambien hace uso de la operacion ".sort" para ordenar la lista de menor a mayor para asi poderle sacar raiz cubica al primer elemento de la lista (El mas pequeño)
 ```python 
  def promedio (lista:list): #Se inicializa la funcion con su parametro.
