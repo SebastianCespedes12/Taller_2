@@ -194,6 +194,7 @@ if __name__=="__main__":
   elementos_repetidos(lista) 
 ```
 >#### 7.Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
+El programa recorre todos los elementos de una lista, por cada uno de estos recorre a su vez sus caracteres, si el programa detecta que alguno de estos caracteres es una vocal sumara uno a una variable que al llegar a dos hara que se imprima la cadena que se esta tomando. Si no se encuentra ninguna cadena con mas de dos vocales se imprimira el texto "No existe"
 ```python 
  #Función que permite saber si una cadenas de texto tiene dos o mas vocales.
 def no_vocales (lista:list)->list: #Se inicializa la funcion con sus parametros.
@@ -232,7 +233,8 @@ if __name__=="__main__":
   lista2=[5,3,2,4]
   print(si_lista1_no_lista2(lista1,lista2))
 ```
->#### 9.Resolver el punto 7 del taller 1 usando operaciones con vectores. 
+>#### 9.Resolver el punto 7 del taller 1 usando operaciones con vectores.
+Para hacer esto se hizo uso de 7  funcinoes, la primera de ella iteraba todos los elementos de la lista sumandolos para luego dividirlos entre el largo de la lista para asi ascar el promedio. La segunda funcion tambien iteraba todos los elementos de la lista pero esta vez multiplicandolos para finalmente sacarle la raiz quinta a este resultado. La tercera funcion devolvia el valor medio de la lista, para esto ordenaba los valores de menor a mayor y devolvia siempre el tercero ya que es una lista de 5 elementos. La cuarta funcion hacia uso de la operacion de listas ".sort" para ordenar la lista de menor a mayor y devolverla. La quinta lista hacia uso de la operacin de listas "lista.sort(reverse = True)" para ordenar la lista de mayor a menor. La sexta funcion hace uso de la funcion de listas ".sort" para ordenarla de menor a mayor para asi poder elevar el ultimo de la lista elevado al primero (Mayor elevado al menor). La ultima lista tambien hace uso de la operacion ".sort" para ordenar la lista de menor a mayor para asi poderle sacar raiz cubica al primer elemento de la lista (El mas pequeño)
 ```python 
  def promedio (lista:list): #Se inicializa la funcion con su parametro.
     j=0 #Es una variable que debe iniciar en 0 y se le sumaran los valores de todos los elementos de la lista
