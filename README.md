@@ -286,7 +286,7 @@ if __name__=="__main__":
 ```
 >#### 10.Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad? 
 
-El programa filtra una lista para encontrar los números que son múltiplos de 3. Se presentan dos enfoques: un patrón de acumulación y una comprensión de listas. Además, se resuelve el problema sin usar el operador módulo, utilizando parte del codigo del primer punto.
+El programa comprueba que cada elemento de la lista se múltiplos de 3 utilizando el operador de modulo (%). Se presentan dos enfoques: un patrón de acumulación y una comprensión de listas. Además, se resuelve el problema sin usar el operador módulo, utilizando parte del codigo del primer punto.
 ```python 
 def acum_mult_tres (A: list) -> list:
   B=[] #Se inicializa una lista vacía
